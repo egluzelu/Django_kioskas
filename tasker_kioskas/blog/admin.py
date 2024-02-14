@@ -4,32 +4,27 @@ from . import models
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['name', 'owner',]
+    list_display = ['name', 'owner', 'created_at']
     list_display_links = ['name', 'owner']
     list_filter = ['owner']
-    search_fields = ['name']
+    search_fields = ['name', 'description', 'owner__last_name', 'owner__username']
+    readonly_fields = ['created_at', 'updated_at']
     fieldsets = (
         (_("general").title(), {
             "fields": (
-                ('name'),
+                'name',
+                'owner',
                 'description',
             ),
         }),
-        (_("ownership").title(), {
+        (_("temporal tracking").title(), {
             "fields": (
-                ('owner'),
+                ('created_at', 'updated_at'),
             ),
         }),
     )
     
 
-    def total_blog(self, obj: models.Blog):
-        return obj.blog.count()
-    total_blog.short_description = _("total blogs")
-
-    def recent_blog(self, obj: models.Blog):
-        return "; ".join(obj.blog.order_by('-created_at').values_list('name', flat=True)[:3])
-    recent_blog.short_description = _("recent blogs")
 
 
 admin.site.register(models.Blog, BlogAdmin)

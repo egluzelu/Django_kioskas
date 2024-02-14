@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 
 
-
 class Blog(models.Model):
     name = models.CharField(_("name"), max_length=100, db_index=True)
     description = models.TextField(_("description"), blank=True, max_length=10000)
@@ -15,11 +14,13 @@ class Blog(models.Model):
         related_name="blogs",
     )
 
-
+    created_at = models.DateTimeField(_("created at"), auto_now_add=True, db_index=True, null=True)
+    updated_at = models.DateTimeField(_("updated at"), auto_now=True, db_index=True, null=True)
+    
     class Meta:
         verbose_name = _("blog")
         verbose_name_plural = _("blogs")
-        ordering = ['name', 'owner', 'description']
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.name
