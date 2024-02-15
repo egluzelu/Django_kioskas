@@ -1,8 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import gettext as _
-
+from django.utils.translation import gettext_lazy as _
 
 
 class Project(models.Model):
@@ -13,7 +12,6 @@ class Project(models.Model):
         on_delete=models.CASCADE,
         related_name="projects",
     )
-
 
     class Meta:
         verbose_name = _("project")
@@ -26,6 +24,7 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("project_detail", kwargs={"pk": self.pk})
     
+
 class Task(models.Model):
     name = models.CharField(_("name"), max_length=100, db_index=True)
     description = models.TextField(_("description"), blank=True, max_length=10000)
@@ -38,7 +37,6 @@ class Task(models.Model):
     is_done = models.BooleanField(_("is done"), default=False, db_index=True)
     deadline = models.DateTimeField(_("deadline"), null=True, blank=True, db_index=True)
 
-
     class Meta:
         verbose_name = _("task")
         verbose_name_plural = _("tasks")
@@ -49,7 +47,3 @@ class Task(models.Model):
 
     def get_absolute_url(self):
         return reverse("task_detail", kwargs={"pk": self.pk})
-    
-
-
-

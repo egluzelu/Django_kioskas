@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block title %}{{ block.super }} | {{ blog }}{% endblock title %}
 {% block content %}
 <h1> {{ blog.name }}</h1>
-<p>Owner: {{ blog.owner }} </p>
+<p>{% trans "owner"|capfirst %}: {{ blog.owner }} </p>
 <p>{{ blog.description }}</p>
-<p>Created: {{ blog.created_at }}{% if blog.created_at != blog.updated_at %},
-    updated: {{ blog.updated_at }}
+<p>{% trans "created"|capfirst %}: {{ blog.created_at }}{% if blog.created_at != blog.updated_at %},
+    {% trans "updated" %}: {{ blog.updated_at }}
 {% endif %}
 </p>
 {% endblock content %}

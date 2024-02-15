@@ -1,7 +1,7 @@
-{% extends "base.html" %}
-{% block title %}{{ block.super }} list{% endblock title %}
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ block.super }} {% trans "list" %}{% endblock title %}
 {% block content %}
-<h1>Projects</h1>
+<h1>{% trans "projects"|capfirst %}</h1>
 <ul>
 {% for project in project_list %}
     <li><a href="{% url "project_detail" project.pk %}">{{ project.name }}</a>

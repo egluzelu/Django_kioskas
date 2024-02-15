@@ -1,9 +1,8 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block content %}
-    <h1>Kioskelis</h1>
-    <p>Users: {{ users_count }}</p>
-    <p>Projects: {{ projects_count }}</p>
-    <p>Tasks: {{ tasks_count }}</p>
-    <p>Blogs: {{ blogs_count }}</p>
-
+    <h1>Kioskelis "{% trans "daisy"|capfirst %}"</h1>
+    <p>{% trans "users"|capfirst %}: {{ users_count }}</p>
+    <p>{% trans "projects"|capfirst %}: {{ projects_count }}</p>
+    <p>{% trans "tasks"|capfirst %}: {{ tasks_count }}</p>
+    <p>{% trans "blogs"|capfirst %}: {{ blogs_count }}</p>
 {% endblock content %}

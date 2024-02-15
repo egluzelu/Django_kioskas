@@ -1,5 +1,7 @@
 body {
-    background-color: #eee2f1;
+    background-color: #9999999f;
+    background-image: url('/static/img/ekranas.jpg');
+    background-size: contain;
     font-family: sans-serif;
     font-size: 25px;
     display: flex;
@@ -9,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #238095;
+    background-color: #9999999f;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,20 +34,20 @@ header ul.nav {
 }    
 
 header ul.nav li a, header ul.nav form button {
-    background-color: #b5a7d3;
+    background-color: #140532;
     display: block;
     margin: 0;
     padding: 0.5rem;
     border: 0;
     border-bottom: 2px solid #7e90a1;
     cursor: pointer;
-    color: #86939f;
+    color: #cb90cf;
     font-size: 100%;
     border-radius: 0.5rem;
 }
 
 header ul.nav li a:hover, header ul.nav form button:hover {
-    background-color: #a594a1;
+    background-color: #dc91cb;
     border-bottom: 2px solid #0055cc;
     color: #0055cc;
     text-decoration: none;
@@ -53,25 +55,26 @@ header ul.nav li a:hover, header ul.nav form button:hover {
 
 main {
     flex-grow: 1;
+    background-color: #9999999f;
 }
 
 footer {
-    background-color: #917b94;
+    background-color: #2b0630;
 }
 
 a {
     color: #004488;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 1000;
 }
 
 a:hover {
-    color: #0055cc;
-    text-decoration: underline;
+    color: #2674b4;
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    background-color: #a592a7;
+    background-color: #7242a9;
     border-color: 1px solid #888888;
     padding: 0.5rem;
     margin: 1rem 0;
@@ -83,7 +86,7 @@ h4:first-child, h5:first-child, h6:first-child {
 }
 
 p, main ul {
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     margin: 1rem 0;
 }
 
@@ -100,7 +103,7 @@ footer p {
 }
 
 footer a {
-    color: #66aaff;
+    color: #2674b4;
 }
 
 footer a:hover {
@@ -127,13 +130,26 @@ section.messages .message {
 }
 
 .message-success {
-    background-color: #ccff99;
+    background-color: #b56a91;
 }
 
 .message-warning {
-    background-color: #ffcc99;
+    background-color: #cf6161;
 }
 
 .message-error {
-    background-color: #ffaaaa;
+    background-color: #c94a4c;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+header form select {
+    margin: 1rem;
+    font-size: 75%;
+}
+
+footer .icon {
+    max-height: 24px;
 }

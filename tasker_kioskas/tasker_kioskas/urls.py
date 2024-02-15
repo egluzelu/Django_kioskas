@@ -22,9 +22,9 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('tasks.urls')),
     path('blog/', include('blog.urls')),
+    path('i18n', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 ]
 
 urlpatterns.extend(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
 urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
-

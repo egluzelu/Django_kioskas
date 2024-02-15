@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block title %}{{ block.super }} | {{ project }}{% endblock title %}
 {% block content %}
 <h1>
     {{ project.name }}
 </h1>
-<p>Owner: {{ project.owner }}</p>
-<p>List of preject tasks:</p>
+<p>{% trans "owner"|capfirst %}: {{ project.owner }}</p>
+<p>{% trans "list of preject tasks"|capfirst %}:</p>
 <ul>
 {% for task in project.tasks.all %}
     <li><a href="{% url "task_done" task.pk %}?next={{ request.path }}">

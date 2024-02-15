@@ -1,11 +1,12 @@
-{% extends "base.html" %}
-{% block title %}{{ block.super }} list{% endblock title %}
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ block.super }} {% trans "list" %}{% endblock title %}
 {% block content %}
-<h1>Blogs</h1>
+<h1>{% trans "blogs"|capfirst %}</h1>
 <ul>
 {% for blog in blog_list %}
-    <li><a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a>
-        <span style="float:left;">{{ blog.created_at }}</span>
+    <li>
+        {{ blog.created_at }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a>
     </li>
 {% endfor %}
 </ul>
