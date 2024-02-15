@@ -3,9 +3,10 @@
 {% block content %}
 <h1>Blogs</h1>
 <ul>
-    {% for blog in blog_list %}
-        <li><a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a>
-        </li>
-    {% endfor %}
-    </ul>
-    {% endblock content %}
+{% for blog in blog_list %}
+    <li><a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a>
+        <span style="float:left;">{{ blog.created_at }}</span>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}

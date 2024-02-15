@@ -1,7 +1,7 @@
 body {
-    background-color: #cccccc;
+    background-color: #eee2f1;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 25px;
     display: flex;
     flex-direction: column;
     margin: 0; padding: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #999999;
+    background-color: #238095;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,20 +32,20 @@ header ul.nav {
 }    
 
 header ul.nav li a, header ul.nav form button {
-    background-color: #aaaaaa;
+    background-color: #b5a7d3;
     display: block;
     margin: 0;
     padding: 0.5rem;
     border: 0;
-    border-bottom: 2px solid #004488;
+    border-bottom: 2px solid #7e90a1;
     cursor: pointer;
-    color: #004488;
+    color: #86939f;
     font-size: 100%;
     border-radius: 0.5rem;
 }
 
 header ul.nav li a:hover, header ul.nav form button:hover {
-    background-color: #b8b8b8;
+    background-color: #a594a1;
     border-bottom: 2px solid #0055cc;
     color: #0055cc;
     text-decoration: none;
@@ -56,7 +56,7 @@ main {
 }
 
 footer {
-    background-color: #666666;
+    background-color: #917b94;
 }
 
 a {
@@ -71,7 +71,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    background-color: #bbbbbb;
+    background-color: #a592a7;
     border-color: 1px solid #888888;
     padding: 0.5rem;
     margin: 1rem 0;

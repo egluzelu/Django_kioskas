@@ -23,6 +23,15 @@ def blog_detail(request: HttpRequest, pk: int) -> HttpResponse:
         'blog': get_object_or_404(blog_models.Blog, pk=pk),
     })
 
+def project_list(request: HttpRequest) -> HttpResponse:
+    return render(request, 'projects/project_list.html', {
+        'project_list': models.Project.objects.all(),
+    })
+
+def project_detail(request: HttpRequest, pk: int) -> HttpResponse:
+    return render(request, 'projects/project_detail.html', {
+        'project': get_object_or_404(models.Project, pk=pk),
+    })
 
 def task_list(request: HttpRequest) -> HttpResponse:
     return render(request, 'tasks/task_list.html', {
