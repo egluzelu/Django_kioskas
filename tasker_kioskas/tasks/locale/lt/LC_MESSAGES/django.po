@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 18:10+0200\n"
+"POT-Creation-Date: 2024-02-19 13:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,23 @@ msgstr "užduotis"
 msgid "blogs"
 msgstr "užrašinė"
 
-#: tasks/templates/base.html:40
+#: tasks/templates/base.html:23
+msgid "admin"
+msgstr "adminas"
+
+#: tasks/templates/base.html:26
+msgid "log out"
+msgstr "atsijungti"
+
+#: tasks/templates/base.html:28
+msgid "log in"
+msgstr "prisijungti"
+
+#: tasks/templates/base.html:29
+msgid "sign up"
+msgstr "registruotis"
+
+#: tasks/templates/base.html:53
 msgid "we like all flowers, but daisies are the best.."
 msgstr "mums patinka visos gėlės, bet labiausiai ramunėlės.."
 
