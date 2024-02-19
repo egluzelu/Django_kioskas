@@ -5,7 +5,7 @@
 <ul>
 {% for blog in blog_list %}
     <li>
-        {{ blog.created_at }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{ blog.created_at }}&nbsp;&nbsp;&nbsp;
         <a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a>
     </li>
 {% endfor %}

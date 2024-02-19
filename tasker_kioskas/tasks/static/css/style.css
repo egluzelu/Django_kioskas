@@ -34,7 +34,7 @@ header ul.nav {
 }    
 
 header ul.nav li a, header ul.nav form button {
-    background-color: #140532;
+    background-color: #232681;
     display: block;
     margin: 0;
     padding: 0.5rem;
@@ -59,7 +59,7 @@ main {
 }
 
 footer {
-    background-color: #2b0630;
+    background-color: #3b063b;
 }
 
 a {

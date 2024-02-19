@@ -111,6 +111,7 @@ LANGUAGES = [
     (LANGUAGE_CODE, 'US English'),
     ('lt', 'Lietuvių'),
 ]
+
 TIME_ZONE = 'Europe/Vilnius'
 USE_I18N = True
 USE_L10N = True
