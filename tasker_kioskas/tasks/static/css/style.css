@@ -172,10 +172,16 @@ main form select {
 }
 
 main form button {
-    background-color: #4f1ecc;
-    font-size: 120%;
+    color: black;
+    background-color: #5f4a95;
     outline: solid;
+    border: 1 px solid #09010c;
+    border-bottom: 2px solid #040404;
+    padding: 0.5rem;
+    font-size: 100%;
+    cursor: pointer;
 }
+
 
 main form .helptext {
     display: block;
@@ -186,3 +192,38 @@ main form .helptext {
     padding: 1rem;
 }
 
+button, .button {
+    color: black;
+    background-color: #5f4a95;
+    outline: solid;
+    border: 1 px solid #09010c;
+    border-bottom: 2px solid #040404;
+    padding: 0.5rem;
+    font-size: 90%;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+button:hover, .button:hover {
+    color: black;
+    background-color: #774677;
+    border-bottom: 2px solid #0e0e0f;
+}
+
+.toolbar {
+    margin: 2.5rem 0.5rem 1.5rem;
+
+}
+
+.toolbar form {
+    display: inline;
+}
+
+.toolbar form select {
+    padding: 0.05rem;
+}
+
+div.tube {
+    padding: 1rem;
+}

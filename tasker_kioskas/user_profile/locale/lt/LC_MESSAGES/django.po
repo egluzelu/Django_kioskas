@@ -105,8 +105,7 @@ msgstr "pakeisti slaptažodį"
 #: user_profile/templates/registration/password_reset_confirm.html:12
 msgid "Password Reset Failed: the link has expired and is no longer valid."
 msgstr ""
-"Pakeisti slaptažodžio nepavyko: nuoroda nebegalioja, nes baigėsi jos veikimo "
-"laikas."
+"Pakeisti slaptažodžio nepavyko: nuoroda nebegalioja, nes baigėsi jos veikimo laikas."
 
 #: user_profile/templates/registration/password_reset_done.html:2
 #: user_profile/templates/registration/password_reset_form.html:2
