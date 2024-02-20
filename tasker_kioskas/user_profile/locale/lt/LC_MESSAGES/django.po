@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-19 13:51+0200\n"
+"POT-Creation-Date: 2024-02-20 08:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,9 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
+
 #: user_profile/apps.py:8
 msgid "user profile"
 msgstr "vartotojo profilis"
+
+#: user_profile/forms.py:13
+msgid ""
+"\n"
+"            Your password can not be too similar to your other personal "
+"information,<br> \n"
+"            Your password must contain at least 8 characters,<br> \n"
+"            Your password can not be a commonly used,<br>\n"
+"            Your password can not be entirely numeric."
+msgstr ""
+"\n"
+"            Jūsų slaptažodis negali būti per daug panašus į Jūsų kitą asmeninę "
+" informaciją,<br> \n"
+"            Jūsų slaptažodis turi būti iš bent 8 simbolių,<br> \n"
+"            Jūsų slaptažodis negali būti per daug populiarus,<br> \n"
+"            Jūsų slaptažodis negali būti tik iš skaičių."
 
 #: user_profile/templates/registration/logged_out.html:2
 #: user_profile/templates/registration/logged_out.html:4
@@ -87,7 +104,9 @@ msgstr "pakeisti slaptažodį"
 
 #: user_profile/templates/registration/password_reset_confirm.html:12
 msgid "Password Reset Failed: the link has expired and is no longer valid."
-msgstr "Pakeisti slaptažodžio nepavyko: nuoroda nebegalioja, nes baigėsi jos veikimo laikas."
+msgstr ""
+"Pakeisti slaptažodžio nepavyko: nuoroda nebegalioja, nes baigėsi jos veikimo "
+"laikas."
 
 #: user_profile/templates/registration/password_reset_done.html:2
 #: user_profile/templates/registration/password_reset_form.html:2
@@ -114,8 +133,8 @@ msgid ""
 msgstr ""
 "Sveiki,\n"
 "\n"
-"Buvo duotas prašymas pakeisti Jūsų slaptažodį svetainėje Kioskas. Jei tai buvote ne Jūs,"
-"prašome ignoruokite šį laišką.\n"
+"Buvo duotas prašymas pakeisti Jūsų slaptažodį svetainėje Kioskas. Jei tai "
+"buvote ne Jūs,prašome ignoruokite šį laišką.\n"
 "\n"
 "Galite pakeisti savo slaptažodį paspaudę šią nuorodą:"
 
