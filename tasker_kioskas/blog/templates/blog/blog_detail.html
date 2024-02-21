@@ -2,6 +2,12 @@
 {% block title %}{{ block.super }} | {{ blog }}{% endblock title %}
 {% block content %}
 <h1> {{ blog.name }}</h1>
+<a class="button" style="float:right;" href="{% url "blog_create" %}">{% trans "create new blog"|capfirst %}</a>
+{% if blog.owner == request.user or request.user.is_superuser %}
+    <p>
+        <a class="button" href="{% url "blog_update" blog.pk %}">{% trans "edit"|capfirst %}</a>
+    </p>
+{% endif %}
 <p>{% trans "owner"|capfirst %}: {{ blog.owner }} </p>
 <p>{{ blog.description }}</p>
 <p>{% trans "created"|capfirst %}: {{ blog.created_at }}{% if blog.created_at != blog.updated_at %},

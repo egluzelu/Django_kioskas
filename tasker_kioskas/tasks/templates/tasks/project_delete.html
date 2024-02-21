@@ -6,10 +6,9 @@
     {% csrf_token %}
     {{ form.as_p }}
     <p>
-        {% trans "are you sure you want to delete project" %}
-        {{ project.name }}? 
-        {% trans "all project's"|capfirst %} {{ project.tasks.count }}
-        {% trans "tasks will be deleted" %}.
+        {% trans "are you sure you want to delete project"|capfirst %}
+        "{{ project.name }}"? 
+        {% trans "all project's tasks will be deleted also."|capfirst %}
     </p>
     <p>
         <button type="submit">{% trans "confirm"|capfirst %}</button>

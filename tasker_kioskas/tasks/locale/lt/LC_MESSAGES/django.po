@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-20 16:52+0200\n"
+"POT-Creation-Date: 2024-02-20 19:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,19 +156,15 @@ msgid "are you sure you want to delete project"
 msgstr "ar tikrai norite ištrinti visą projektą"
 
 #: tasks/templates/tasks/project_delete.html:11
-msgid "all project's"
-msgstr "visi projektai"
+msgid "all project's tasks will be deleted also."
+msgstr "visos projekto užduotys bus taip pat ištrintos."
 
-#: tasks/templates/tasks/project_delete.html:12
-msgid "tasks will be deleted"
-msgstr "užduotys bus ištrintos"
-
-#: tasks/templates/tasks/project_delete.html:15
+#: tasks/templates/tasks/project_delete.html:14
 #: tasks/templates/tasks/project_update.html:8
 msgid "confirm"
 msgstr "patvirtinti"
 
-#: tasks/templates/tasks/project_delete.html:16
+#: tasks/templates/tasks/project_delete.html:15
 msgid "change mind"
 msgstr "nevygdyti"
 
@@ -188,9 +184,9 @@ msgstr "užduočių sarašas:"
 msgid "no tasks found"
 msgstr "užduočių nerasta"
 
-#: tasks/templates/tasks/project_list.html:6
-msgid "create new"
-msgstr "sukurti naują"
+#: tasks/templates/tasks/project_list.html:25
+msgid "create new project"
+msgstr "sukurti naują projektą"
 
 #: tasks/templates/tasks/project_update.html:2
 msgid "editing"
@@ -235,3 +231,6 @@ msgstr "padaryta"
 #: tasks/views.py:109
 msgid "undone"
 msgstr "nepadarytos užduotys"
+
+#~ msgid "create new"
+#~ msgstr "sukurti naują"
