@@ -10,7 +10,10 @@
         <a class="button" href="{% url "project_delete" project.pk %}">{% trans "delete"|capfirst %}</a>
     </p>
 {% endif %}
-<p>{% trans "owner"|capfirst %}: <a href="{% url "user_detail" project.owner.username %}">{{ project.owner }}</a></p>
+<p>{% trans "owner"|capfirst %}: <a href="{% url "user_detail" project.owner.username %}">{{ project.owner }}</a>
+    {% if project.owner.profile.picture %}
+    <img src="{{ project.owner.profile.picture.url }}" alt={% trans "profile Picture"|title %} width="50">
+{% endif %} </p>
 <h2>{% trans "tasks"|capfirst %} ({{ project.tasks.count }})</h2>
 <ul>
     <li class="list-table-header">

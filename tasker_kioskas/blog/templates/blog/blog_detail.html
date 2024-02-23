@@ -8,7 +8,11 @@
         <a class="button" href="{% url "blog_update" blog.pk %}">{% trans "edit"|capfirst %}</a>
     </p>
 {% endif %}
-<p>{% trans "owner"|capfirst %}: {{ blog.owner }} </p>
+<p>{% trans "owner"|capfirst %}: {{ blog.owner }} 
+    {% if blog.owner.profile.picture %}
+    <img src="{{ blog.owner.profile.picture.url }}" alt={% trans "profile Picture"|title %} width="150">
+    {% endif %}
+</p>
 <p>{{ blog.description }}</p>
 <p>{% trans "created"|capfirst %}: {{ blog.created_at }}{% if blog.created_at != blog.updated_at %},
     {% trans "updated" %}: {{ blog.updated_at }}

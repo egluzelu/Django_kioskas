@@ -26,7 +26,11 @@
         {{ blog.updated_at }}&nbsp;&nbsp;&nbsp; 
         <a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a></li>
     <li>
-        <p> Blog maker: <a href="{% url "user_detail" blog.owner.username %}">{{ blog.owner }}</a></p>
+        <p> Blog maker: <a href="{% url "user_detail" blog.owner.username %}">{{ blog.owner }}</a>
+            {% if blog.owner.profile.picture %}
+            <img src="{{ blog.owner.profile.picture.url }}" alt={% trans "profile Picture"|title %} width="50">
+        {% endif %}
+        </P>
         <p> ----------------------------------------------------------------------------------------------------------------</p>
     </li>
 {% endfor %}
