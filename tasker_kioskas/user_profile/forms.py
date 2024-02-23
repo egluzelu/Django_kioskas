@@ -1,7 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
-
+from django import forms
+from . import models
+from typing import Any
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -15,3 +17,14 @@ class CreateUserForm(UserCreationForm):
             Your password must contain at least 8 characters,<br> 
             Your password can not be a commonly used,<br>
             Your password can not be entirely numeric.''')
+
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('first_name','last_name', 'email',)
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = models.Profile
+        fields = ('picture',)

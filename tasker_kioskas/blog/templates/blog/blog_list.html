@@ -18,7 +18,6 @@
         value="{{ request.GET.search_name }}"
         placeholder="{% trans 'search by name' %}...">
         <button type="submit">&#128269;</button>
-        {% comment %} <a class="button" style="float:right;" href="{% url "blog_create" %}">{% trans "create new blog"|capfirst %}</a> {% endcomment %}
     </form>
 </div>
 <ul>
@@ -27,10 +26,8 @@
         {{ blog.updated_at }}&nbsp;&nbsp;&nbsp; 
         <a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a></li>
     <li>
-        <a> Blog maker: {{ blog.owner }}</a>
-    </li>
-    <li>
-        <a> ---------------------------------------------------------------------------------------------------------------------------------- </a>
+        <p> Blog maker: <a href="{% url "user_detail" blog.owner.username %}">{{ blog.owner }}</a></p>
+        <p> ----------------------------------------------------------------------------------------------------------------</p>
     </li>
 {% endfor %}
 </ul>
