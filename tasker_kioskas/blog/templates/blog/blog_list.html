@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n %}
+{% extends "base.html" %}{% load i18n %} {% load static %}
 {% block title %}{{ block.super }} {% trans "list" %}{% endblock title %}
 {% block content %}
 <h1>{% trans "blogs"|capfirst %}</h1>
@@ -20,19 +20,18 @@
         <button type="submit">&#128269;</button>
     </form>
 </div>
-<ul>
-{% for blog in blog_list %}
-    <li>
-        {{ blog.updated_at }}&nbsp;&nbsp;&nbsp; 
-        <a href="{% url "blog_detail" blog.pk %}">{{ blog.name }}</a></li>
-    <li>
-        <p> Blog maker: <a href="{% url "user_detail" blog.owner.username %}">{{ blog.owner }}</a>
+        {% for blog in blog_list %}
+        <ul class="style2"> Blog maker:
             {% if blog.owner.profile.picture %}
             <img src="{{ blog.owner.profile.picture.url }}" alt={% trans "profile Picture"|title %} width="50">
-        {% endif %}
-        </P>
-        <p> ----------------------------------------------------------------------------------------------------------------</p>
-    </li>
-{% endfor %}
-</ul>
+            {% endif %}
+            <a href="{% url "user_detail" blog.owner.username %}">{{ blog.owner }}</a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Blog name: <a href="{% url "blog_detail" blog.pk %}"> {{ blog.name }} </a>
+            <p>{{ blog.updated_at }}</p>
+            <p><img src="{% static 'img/line_picture.png' %}" width="900"></p>
+        </ul>
+        {% endfor %}
 {% endblock content %}
+
+

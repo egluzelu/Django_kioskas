@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'), 
+    path('', views.index, name='index'),
     path('projects/', views.ProjectListView.as_view(), name='project_list'),
     path('projects/create/', views.ProjectCreateView.as_view(), name='project_create'),
     path('project/<int:pk>/', views.ProjectDetailView.as_view(), name='project_detail'),
@@ -10,6 +10,8 @@ urlpatterns = [
     path('project/<int:pk>/delete/', views.ProjectDeleteView.as_view(), name='project_delete'),
     path('tasks/', views.task_list, name='task_list'),
     path('tasks/create/', views.task_create, name='task_create'),
-    path('task/<int:pk>/', views.task_detail, name='task_detail'), 
-    path('task/<int:pk>/done/', views.task_done, name='task_done'), 
+    path('task/<int:pk>/', views.task_detail, name='task_detail'),
+    path('task/<int:pk>/edit/', views.task_update, name='task_update'),
+    path('task/<int:pk>/delete/', views.task_delete, name='task_delete'),
+    path('task/<int:pk>/done/', views.task_done, name='task_done'),
 ]
