@@ -12,6 +12,7 @@ from django.views import generic
 from . import models, forms
 from django.urls import reverse
 from django.views import generic
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 class BlogCreateView(LoginRequiredMixin, generic.CreateView):
@@ -55,12 +56,24 @@ def blog_list(request: HttpRequest) -> HttpResponse:
     search_name = request.GET.get('search_name')
     if search_name:
         queryset = queryset.filter(name__icontains=search_name)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(queryset.all(), 5)
+
+    try:
+        blogos = paginator.page(page)
+    except PageNotAnInteger:
+        blogos = paginator.page(1)
+    except EmptyPage:
+        blogos = paginator.page(paginator.num_pages)
+
     context = {
-        'blog_list': queryset.all(),
+        'blog_list': blogos,
         'user_list': get_user_model().objects.all().order_by('username'),
         'next': reverse('blog_list') + '?' + \
             '&'.join([f"{key}={value}" for key, value in request.GET.items()]),
     }
+
     return render(request, 'blog/blog_list.html', context)
 
 

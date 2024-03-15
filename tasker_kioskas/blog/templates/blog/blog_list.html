@@ -20,6 +20,29 @@
         <button type="submit">&#128269;</button>
     </form>
 </div>
+
+{% if blog_list.has_other_pages %}
+        <ul class="pagination">
+          {% if blog_list.has_previous %}
+            <li><a href="?page={{ blog_list.previous_page_number }}{% if request.GET.owner %}&owner={{ request.GET.owner }}{% endif %}{% if request.GET.search_name %}&search_name={{ request.GET.search_name }}{% endif %}">&laquo;</a></li>
+          {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+          {% for i in blog_list.paginator.page_range %}
+            {% if blog_list.number == i %}
+              <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+            {% else %}
+              <li><a href="?page={{ i }}{% if request.GET.owner %}&owner={{ request.GET.owner }}{% endif %}{% if request.GET.search_name %}&search_name={{ request.GET.search_name }}{% endif %}">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if blog_list.has_next %}
+            <li><a href="?page={{ blog_list.next_page_number }}{% if request.GET.owner %}&owner={{ request.GET.owner }}{% endif %}{% if request.GET.search_name %}&search_name={{ request.GET.search_name }}{% endif %}">&raquo;</a></li>
+          {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+
         {% for blog in blog_list %}
         <ul class="style2"> Blog maker:
             {% if blog.owner.profile.picture %}
@@ -29,9 +52,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Blog name: <a href="{% url "blog_detail" blog.pk %}"> {{ blog.name }} </a>
             <p>{{ blog.updated_at }}</p>
-            <p><img src="{% static 'img/line_picture.png' %}" width="900"></p>
+            <p><img src="{% static 'img/line_picture_kioskas.png' %}" width="900"></p>
         </ul>
-        {% endfor %}
+        {% endfor %}  
 {% endblock content %}
 
 
